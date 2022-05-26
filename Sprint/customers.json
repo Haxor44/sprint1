@@ -1,0 +1,18 @@
+{
+  "customers": [
+    {
+      "email": "rms@gmail.com", 
+      "id": "5877", 
+      "l_name": "rms", 
+      "name": "Ryan", 
+      "number": "777"
+    }, 
+    {
+      "email": "duck@duckduckgo.com", 
+      "id": "8556", 
+      "l_name": "yard", 
+      "name": "yarnds", 
+      "number": "99999"
+    }
+  ]
+}

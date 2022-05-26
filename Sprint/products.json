@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "id": "7401", 
+      "name": "juice", 
+      "quantity": "90"
+    }, 
+    {
+      "id": "8320", 
+      "name": "apples", 
+      "quantity": "100"
+    }, 
+    {
+      "id": "4547", 
+      "name": "Fanta", 
+      "quantity": "90"
+    }
+  ]
+}
