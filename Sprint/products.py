@@ -3,22 +3,27 @@ import random
 import json
 
 def insert_product():
-	products={}
-	products1=[]
-	new_customers={}
-	#generating random number for id
+	m=[]
+	new_products={}
+	#reading data stored in in file in order to write together with new data
+	with open("products.json") as file1:
+		data=json.load(file1)
+	for d in data["products"]:
+		m.append(d)
 	product_id =str(random.randint(1000, 9999))
-	#getting user input
+    #getting user input
 	name=input("Enter name:")
-	quantity=input("Enter amount:")
-	#instantitating product object
-	product = Product(product_id,name,quantity)
-	#storing product object in dictionary
-	products = {"id":product.product_id,"name":product.name,"quantity":product.quantity}
-	products1.append(products)
-	#passing the dictionary to json
-	with open("products.json","a") as file:
-		file.write(json.dumps(products,indent=2,separators=(", ", ": "),sort_keys=True))
+	quantity=input("Enter quantity:")
+    #instantitating product object
+	product = Product(product_id,name,quantity,price)
+    #storing product object in dictionary
+	new_product = {"id":product.product_id,"name":product.name,"quantity":product.quantity,"price":product.price}
+	m.append(new_product)
+	#print(m)
+	new_products={"products":m}
+	with open("products.json","w") as file:
+		file.write(json.dumps(new_products,indent=2,separators=(", ", ": "),sort_keys=True))
+	print("***Product inserted Successfully!!!***")
 
 #display users
 def display_products():
@@ -29,7 +34,8 @@ def display_products():
 			print("**************")
 			print("Product id" "->"+products["id"])
 			print("Product name" "->"+products["name"])
-			print("Product name" "->"+products["quantity"])
+			print("Product quantity" "->"+products["quantity"])
+			print("Product price" "->"+products["price"])
 			print("------------------")
 
 #To update product data by passing in id
@@ -38,6 +44,7 @@ def update_product():
 	key=input("Enter customer id: ")
 	name=input("Enter new name: ")
 	quantity=input("Enter new  amount: ")
+	price=input("Enter new  price: ")
 	new_data=[]
 	new_record={}
 	#Reading stored data from json file
@@ -46,9 +53,11 @@ def update_product():
 	#looping through dictionaries and searching for entered key
 	for product_data in data["products"]:
 		if key == product_data["id"]:
+			#applying new changes
 			product_data["id"]=key
 			product_data["name"]=name
 			product_data["quantity"]=quantity
+			product_data["price"]=price
 		new_data.append(product_data)
 		new_record={"products":new_data}
 		#writing new data together with previous data to file

@@ -5,14 +5,32 @@
       "id": "5877", 
       "l_name": "rms", 
       "name": "Ryan", 
-      "number": "777"
+      "number": "777",
+      "wallet":"7000"
     }, 
     {
       "email": "duck@duckduckgo.com", 
       "id": "8556", 
       "l_name": "yard", 
       "name": "yarnds", 
-      "number": "99999"
+      "number": "99999",
+      "wallet":"20000"
+    }, 
+    {
+      "email": "r@duckmails.com", 
+      "id": "6536", 
+      "l_name": "mmst", 
+      "name": "ryq", 
+      "number": "07**********",
+      "wallet":"50000"
+    }, 
+    {
+      "email": "sour", 
+      "id": "8710", 
+      "l_name": "bagles", 
+      "name": "bubbles", 
+      "number": "007",
+      "wallet":"100,000"
     }
   ]
 }

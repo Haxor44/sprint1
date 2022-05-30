@@ -2,29 +2,34 @@ from  customer1 import *
 import random
 import json
 
-customers1={}
+
 
 
 #inserting user data
 def insert_data():
-	customers={}
-	cusomers1=[]
+	m=[]
 	new_customers={}
-	#generating random number for id
+	#reading data stored in in file in order to write together with new data
+	with open("customers.json") as file1:
+		data=json.load(file1)
+	for d in data["customers"]:
+		m.append(d)
 	customer_id =str(random.randint(1000, 9999))
-	#getting user input
+    #getting user input
 	name=input("Enter name:")
 	l_name=input("Enter l_name:")
 	email=input("Enter email:")
 	number=input("Enter number:")
-	#instantitating customer object
-	customer = Customer(customer_id,name,l_name,email,number)
-	#storing customer object in dictionary
-	customers = {"id":customer.customer_id,"name":customer.name,"l_name":customer.l_name,"email":customer.email,"number":customer.number}
-	customers1.append(customers)
-	#passing the dictionary to json
-	with open("customers.json","a") as file:
-		file.write(json.dumps(customers,indent=2,separators=(", ", ": "),sort_keys=True))
+	wallet=input("Enter Amount of cash:")
+    #instantitating customer object
+	customer = Customer(customer_id,name,l_name,email,number,wallet)
+    #storing customer object in dictionary
+	customers = {"id":customer.customer_id,"name":customer.name,"l_name":customer.l_name,"email":customer.email,"number":customer.number,"wallet":customer.wallet}
+	m.append(customers)
+	#print(m)
+	new_customers={"customers":m}
+	with open("customers.json","w") as file:
+		file.write(json.dumps(new_customers,indent=2,separators=(", ", ": "),sort_keys=True))
 
 #display users
 def display_customers():
@@ -132,4 +137,3 @@ def main():
 	
 if __name__ == "__main__":
 	main()
-

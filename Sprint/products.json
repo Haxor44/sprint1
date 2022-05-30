@@ -3,17 +3,26 @@
     {
       "id": "7401", 
       "name": "juice", 
-      "quantity": "90"
+      "quantity": "90",
+      "price":"150"
     }, 
     {
       "id": "8320", 
       "name": "apples", 
-      "quantity": "100"
+      "quantity": "100",
+      "price":"70"
     }, 
     {
       "id": "4547", 
       "name": "Fanta", 
-      "quantity": "90"
+      "quantity": "90",
+      "price":"100"
+    }, 
+    {
+      "id": "5400", 
+      "name": "orange", 
+      "quantity": "7",
+      "price":"50"
     }
   ]
 }

@@ -3,11 +3,12 @@ class Customer:
 	customer = {}
 		
 
-	def __init__(self,customer_id,name,l_name,email,number):
+	def __init__(self,customer_id,name,l_name,email,number,wallet):
 		self.customer_id=customer_id
 		self.name=name
 		self.l_name=l_name
 		self.email=email
 		self.number=number
+		self.wallet=wallet
 
 		
