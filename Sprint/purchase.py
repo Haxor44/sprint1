@@ -99,7 +99,4 @@ def update_customer1(c_id,p_id):
 	save_to_file(filename1,customers)
 	pass
 
-#purchase()
-c=str(8556)
-p=str(8320)
-update_customer1(c,p)
+purchase()
