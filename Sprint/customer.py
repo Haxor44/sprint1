@@ -151,7 +151,7 @@ def customer():
 
 	while(choice !="7"):
 		print("------------------------------\n")
-		print("WELCOME TO POC CUSTOMERS MENU\n")
+		print("WELCOME TO POS CUSTOMERS MENU\n")
 		print("------------------------------\n")
 		print("****")
 		print("Total Number Of Customers:")

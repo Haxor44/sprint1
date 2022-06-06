@@ -119,7 +119,7 @@ def purchase_menu():
 	choice=0
 	while(choice !="7"):
 		print("------------------------------\n")
-		print("WELCOME TO POC CUSTOMERS MENU")
+		print("WELCOME TO POS PURCHASE MENU")
 		print("------------------------------\n")
 		print("1- Buy product")
 		print("7- Exit\n")

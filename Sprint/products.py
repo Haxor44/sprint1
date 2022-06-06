@@ -139,7 +139,7 @@ def product():
 	while(choice !="7"):
 
 		print("------------------------------\n")
-		print("WELCOME TO POC PRODUCTS MENU")
+		print("WELCOME TO POS PRODUCTS MENU")
 		print("------------------------------\n")
 
 		print("****")
