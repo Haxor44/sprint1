@@ -1,0 +1,25 @@
+{
+  "reciepts": [
+    {
+      "customer": "Ryan", 
+      "customer_id": "5877", 
+      "product": "apples", 
+      "product_id": "8320", 
+      "reciept_id": "6767"
+    }, 
+    {
+      "customer": "ryq", 
+      "customer_id": "6536", 
+      "product": "juices3", 
+      "product_id": "7401", 
+      "reciept_id": "8080"
+    }, 
+    {
+      "customer": "ryq", 
+      "customer_id": "6536", 
+      "product": "juices3", 
+      "product_id": "7401", 
+      "reciept_id": "7691"
+    }
+  ]
+}

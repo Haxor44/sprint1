@@ -1,6 +1,8 @@
 from  product import *
+from purchase import open_product_file,save_to_file,check_for_product,filename2
 import random
 import json
+
 
 def insert_product():
 	m=[]
@@ -28,43 +30,65 @@ def insert_product():
 #display users
 def display_products():
 	#reading stored data from json file
-	with open("products.json") as file :
-		data = json.load(file)
-		for products in data["products"]:
-			print("**************")
-			print("Product id" "->"+products["id"])
-			print("Product name" "->"+products["name"])
-			print("Product quantity" "->"+products["quantity"])
-			print("Product price" "->"+products["price"])
-			print("------------------")
+	data=open_product_file()
+	for products in data["products"]:
+		print("**************")
+		print("Product id" "->"+products["id"])
+		print("Product name" "->"+products["name"])
+		print("Product quantity" "->"+products["quantity"])
+		print("Product price" "->"+products["price"])
+		print("------------------")
+
 
 #To update product data by passing in id
 def update_product():
-	#Taking user input
-	key=input("Enter customer id: ")
-	name=input("Enter new name: ")
-	quantity=input("Enter new  amount: ")
-	price=input("Enter new  price: ")
+	#Taking user input from the user
+	print("1- Update product name")
+	print("2- Update product price")
+	print("3- Update product quantity")
+	choice=input("Enter your choice: ")
+	#Taking product id from the user
+	key=input("Enter id:")
+	data=open_product_file()
 	new_data=[]
 	new_record={}
-	#Reading stored data from json file
-	with open("products.json") as file :
-		data = json.load(file)
-	#looping through dictionaries and searching for entered key
 	for product_data in data["products"]:
-		if key == product_data["id"]:
-			#applying new changes
-			product_data["id"]=key
-			product_data["name"]=name
-			product_data["quantity"]=quantity
-			product_data["price"]=price
-		new_data.append(product_data)
-		new_record={"products":new_data}
-		#writing new data together with previous data to file
-		with open("products.json","w") as file:
-			file.write(json.dumps(new_record,indent=2,separators=(", ", ": "),sort_keys=True))
-		display_products()
-		print("***Updated Successfully!!!***")
+
+		if choice == "1":
+			#looking for matching id
+			if key == product_data["id"]:
+				name=input("Enter new name: ")
+				#updating the name
+				product_data["name"]=name
+				print("***Updated Successfully!!!***")
+			new_data.append(product_data)
+			#storing data in dictionary to later use in json file
+			new_record={"products":new_data}
+			#saving to changes to file
+			save_to_file(filename2,new_record)
+				
+
+		elif choice == "2":
+			#looking for matching id
+			if key == product_data["id"]:
+				price=input("Enter new price: ")
+				#updating the price
+				product_data["price"]=price
+				print("***Updated Successfully!!!***")
+			new_data.append(product_data)
+			new_record={"products":new_data}
+			save_to_file(filename2,new_record)
+
+		elif choice == "3":
+			if key == product_data["id"]:
+				quantity=input("Enter new amount: ")
+				product_data["quantity"]=quantity
+				print("***Updated Successfully!!!***")
+			new_data.append(product_data)
+			#storing data in dictionary to later use in json file
+			new_record={"products":new_data}
+			#saving to changes to file
+			save_to_file(filename2,new_record)
 		
 	
 	
@@ -89,18 +113,45 @@ def delete_product():
 		display_products()
 		print("***Deleted Successfully!!!***")
 
+def search_product():
+	product=input("Enter product id to search: ")
+	with open("products.json") as file :
+		data = json.load(file)
+	for products in data["products"]:
+		if product == products["id"]:
+			print("**************")
+			print("Product id" "->"+products["id"])
+			print("Product name" "->"+products["name"])
+			print("Product quantity" "->"+products["quantity"])
+			print("Product price" "->"+products["price"])
+			print("------------------")
 
 
-def main():
 
+
+def show_all_products():
+	data=open_product_file()
+	print(len(data["products"]))
+
+def product():
 	choice =0
 
 	while(choice !="7"):
+
+		print("------------------------------\n")
+		print("WELCOME TO POC PRODUCTS MENU")
+		print("------------------------------\n")
+
+		print("****")
+		print("Total Number Of Products:")
+		show_all_products()
+		print("****\n")
 
 		print("1- Enter Product")
 		print("2- Show Product")
 		print("3- Update Product")
 		print("4- Delete Product")
+		print("5- Search Product")
 		print("7- Exit\n")
 		choice= input(":")
 		#to insert data press1
@@ -118,6 +169,10 @@ def main():
 		elif choice == "4":
 			delete_product()
 
+		#to search for a product
+		elif choice == "5":
+			search_product()
+
 		#To exit program enter 7
 		elif choice == "7":
 			break
@@ -126,8 +181,7 @@ def main():
 			print("Wrong option")
 
 	
-if __name__ == "__main__":
-	main()
+
 
 
 	
