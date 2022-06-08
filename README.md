@@ -46,6 +46,7 @@ SEARCH A PRODUCT<br/>
 To search a product type in 5 into the terminal and simply  pass in the product id which is automatically generated when the user is created and the product associated with that id will be read from the  products.json file and their data returned.<br/>
 
 # 3.Purchase Operations
+This includes selling products as well as keeping stock of remaining products as well as the remaining amount in a customers wallet.
 
 # Basic Usage
 Here is a basic usage of the commands<br/>
