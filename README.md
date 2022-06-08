@@ -7,13 +7,45 @@ The POS system works by first creating an object then saving,retrieving,manipula
 
 # POS FEATURES
 # 1.Customer Operations
-This includes creating,updating,deleting and displaying customer data.
+This includes creating,updating,deleting and displaying customer data.<br/>
 
-# 1.Product Operations
+CREATE A USER<br/>
+A menu with options is presented when the program is run with the following command python sprint.py -c.<br/>
+To insert a new customer type 1 into the terminal and hit enter then enter teir details such as name, email etc.<br/>
+This is then saved to a file called customers.json.<br/>
+
+UPDATE A USER<br/>
+To update a user type in 3 into the terminal and simply  pass in the user id which is automatically generated when the user is created
+Then enter the new data and changes saved are saved in  customers.json file.<br/>
+
+DELETE A USER<br/>
+To delete a user type in 4 into the terminal and simply  pass in the user id which is automatically generated when the user is created
+and the customer associated with that id will be deleted from the  customers.json file.<br/>
+
+SEARCH A USER<br/>
+To search a user type in 5 into the terminal and simply  pass in the user id which is automatically generated when the user is created
+and the customer associated with that id will be read from the  customers.json file and their data returned.<br/>
+
+
+# 2.Product Operations
 This includes creating,updating,deleting and displaying product data.
 
-# 1.Purchase Operations
-This includes making purchases and making keeping record of product stock.
+CREATE A PRODUCT<br/>
+A menu with options is presented when the program is run with the following command python sprint.py -p.<br/>
+To insert a new product type 1 into the terminal and hit enter then enter the product details such as name, price etc.<br/>
+This is then saved to a file called products.json.<br/>
+
+UPDATE A PRODUCT<br/>
+To update a product type in 3 into the terminal and simply  pass in the product id which is automatically generated when the product is created
+Then enter the new data and changes saved are saved in  products.json file.<br/>
+
+DELETE A PRODUCT<br/>
+To delete a product type in 4 into the terminal and simply  pass in the product id which is automatically generated when the product is created and the product associated with that id will be deleted from the  products.json file.<br/>
+
+SEARCH A PRODUCT<br/>
+To search a product type in 5 into the terminal and simply  pass in the product id which is automatically generated when the user is created and the product associated with that id will be read from the  products.json file and their data returned.<br/>
+
+# 3.Purchase Operations
 
 # Basic Usage
 Here is a basic usage of the commands<br/>
