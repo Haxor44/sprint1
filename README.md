@@ -2,7 +2,7 @@
 This is terminal based POs system that does customer,product and purchase operations.
 This is all done using python programming language
 
-#DESCRIPTION
+# DESCRIPTION<br/>
 The POS system works by first creating an object then saving,retrieving,manipulating the data which is stored in json files.
 
 # POS FEATURES
@@ -46,7 +46,9 @@ SEARCH A PRODUCT<br/>
 To search a product type in 5 into the terminal and simply  pass in the product id which is automatically generated when the user is created and the product associated with that id will be read from the  products.json file and their data returned.<br/>
 
 # 3.Purchase Operations
-This includes selling products as well as keeping stock of remaining products as well as the remaining amount in a customers wallet.
+This includes selling products as well as keeping stock of remaining products as well as the remaining amount in a customers wallet.<br/>
+If the purchase is successful a receipt is generated and saved in a receipt.json file and the details displayed on the terminal.<br/>
+The product stock and customers wallet balance are also updated automatically after the transaction.
 
 # Basic Usage
 Here is a basic usage of the commands<br/>
