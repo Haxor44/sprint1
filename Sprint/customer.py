@@ -1,8 +1,8 @@
 from  customer1 import *
-from purchase import open_customer_file,save_to_file,filename1
+from purchase import purchase,open_customer_file,save_to_file,filename1
 import random
 import json
-
+import re
 
 
 
@@ -19,9 +19,20 @@ def insert_data():
     #getting user input
 	name=input("Enter name:")
 	l_name=input("Enter l_name:")
-	email=input("Enter email:")
-	number=input("Enter number:")
-	wallet=input("Enter Amount of cash:")
+	while True:
+		try:
+			email=input("Enter email:")
+			if not re.match(r"^[A-Za-z0-9\.\+_-]+@[A-Za-z0-9\._-]+\.[a-zA-Z]*$", email):
+				print("Enter a valid email address!!!")
+				print("Email format should be ex@example.com...")
+				return True
+			number=input("Enter number:")
+			wallet=input("Enter Amount of cash:")
+		except ValueError:
+			print("Please input an integer!!!")
+			continue
+		else:
+			break
     #instantitating customer object
 	customer = Customer(customer_id,name,l_name,email,number,wallet)
     #storing customer object data in dictionary
@@ -30,6 +41,7 @@ def insert_data():
 	new_customers={"customers":m}
 	with open("customers.json","w") as file:
 		file.write(json.dumps(new_customers,indent=2,separators=(", ", ": "),sort_keys=True))
+	print("****Customer created Successfully!!!****")
 
 #display users
 def display_customers():
@@ -43,15 +55,17 @@ def display_customers():
 			print("Customer last name" "->"+customers["l_name"])
 			print("Customer email" "->"+customers["email"])
 			print("Customer number" "->"+customers["number"])
+			print("Customer wallet" "->"+customers["wallet"])
 			print("------------------")
 			
 
 
 #To update cusomer data by passing in id
 def update_customer():
-	print("1- Update customer name")
-	print("2- Update customer number")
-	print("3- Update customer email")
+	print("1 - Update customer name")
+	print("2 - Update customer number")
+	print("3 - Update customer email")
+	print("4 - Update customer wallet")
 	#Taking input from user
 	choice=input("Enter your choice: ")
 	#taking customer id from user
@@ -141,6 +155,7 @@ def search_customer():
 				print("Customer email" "->"+customers["email"])
 				print("Customer number" "->"+customers["number"])
 				print("------------------")
+	print("Search Completed!!!")
 
 def show_all_customers():
 	data=open_customer_file()
@@ -158,12 +173,15 @@ def customer():
 		show_all_customers()
 		print("****\n")
 
-		print("1- Enter Customer")
-		print("2- Show Customer")
-		print("3- Update Customer")
-		print("4- Delete Customer")
-		print("5- Search Customer")
-		print("7- Exit")
+		print("1 - Enter Customer")
+		print("2 - Show Customer")
+		print("3 - Update Customer")
+		print("4 - Delete Customer")
+		print("5 - Search Customer")
+		print("6 - **Go To Product Menu**")
+		print("7 - **Go To Purchase Menu**")
+
+		print("8 - Exit\n")
 		choice= input(":")
 		#to insert data press1
 		if choice == "1" :
@@ -183,9 +201,15 @@ def customer():
 		#to search for specific customer
 		elif choice == "5":
 			search_customer()
-
+		#Go to product menu
+		elif choice == "6":
+			from products import product
+			product()
 		#To exit program enter 7
 		elif choice == "7":
+			from purchase import purchase_menu
+			purchase_menu()
+		elif choice == "8":
 			break
 
 		else:

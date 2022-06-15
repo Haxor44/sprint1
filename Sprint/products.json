@@ -10,19 +10,25 @@
       "id": "8320", 
       "name": "apples", 
       "price": "70", 
-      "quantity": "100"
+      "quantity": "98"
     }, 
     {
       "id": "4547", 
       "name": "Fanta", 
       "price": "100", 
-      "quantity": "90"
+      "quantity": "100"
     }, 
     {
       "id": "5400", 
       "name": "orange", 
       "price": "50", 
-      "quantity": "7"
+      "quantity": "5"
+    }, 
+    {
+      "id": "2704", 
+      "name": "Watermelon", 
+      "price": "200", 
+      "quantity": "12"
     }
   ]
 }

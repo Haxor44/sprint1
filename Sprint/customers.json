@@ -25,12 +25,28 @@
       "wallet": "49550"
     }, 
     {
-      "email": "sour", 
+      "email": "bubs@gmail.com", 
       "id": "8710", 
       "l_name": "bagles", 
       "name": "bubbles", 
       "number": "007", 
-      "wallet": "100,000"
+      "wallet": "88950"
+    }, 
+    {
+      "email": "d@gmail.com", 
+      "id": "1695", 
+      "l_name": "d", 
+      "name": "dembele", 
+      "number": "11", 
+      "wallet": "750"
+    }, 
+    {
+      "email": "odembele@chelsea.com", 
+      "id": "4684", 
+      "l_name": "Dembele", 
+      "name": "Ousmane", 
+      "number": "799998", 
+      "wallet": "86860"
     }
   ]
 }

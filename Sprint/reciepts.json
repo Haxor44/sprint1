@@ -1,6 +1,9 @@
 {
   "reciepts": [
     {
+      "Date": "2018-12-19", 
+      "Quantity": "4", 
+      "Total Amount:": "510", 
       "customer": "Ryan", 
       "customer_id": "5877", 
       "product": "apples", 
@@ -8,6 +11,9 @@
       "reciept_id": "6767"
     }, 
     {
+      "Date": "2018-12-19", 
+      "Quantity": "2", 
+      "Total Amount:": "200", 
       "customer": "ryq", 
       "customer_id": "6536", 
       "product": "juices3", 
@@ -15,11 +21,46 @@
       "reciept_id": "8080"
     }, 
     {
+      "Date": "2018-12-19", 
+      "Quantity": "3", 
+      "Total Amount:": "210", 
       "customer": "ryq", 
       "customer_id": "6536", 
       "product": "juices3", 
       "product_id": "7401", 
       "reciept_id": "7691"
+    }, 
+    {
+      "Date": "2018-12-19", 
+      "Quantity": "3", 
+      "Total Amount:": "310", 
+      "customer": "bubbles", 
+      "customer_id": "8710", 
+      "product": "apples", 
+      "product_id": "8320", 
+      "reciept_id": "5072"
+    }, 
+    {
+      "Date": "2022-06-15", 
+      "Quantity": "5", 
+      "Total Amount:": "1000", 
+      "customer": "Ousmane", 
+      "customer_id": "4684", 
+      "price": "200", 
+      "product": "Watermelon", 
+      "product_id": "2704", 
+      "reciept_id": "4023"
+    }, 
+    {
+      "Date": "2022-06-15", 
+      "Quantity": "2", 
+      "Total Amount:": "140", 
+      "customer": "Ousmane", 
+      "customer_id": "4684", 
+      "price": "70", 
+      "product": "apples", 
+      "product_id": "8320", 
+      "reciept_id": "4023"
     }
   ]
 }

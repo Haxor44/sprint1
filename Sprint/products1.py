@@ -1,5 +1,5 @@
 from  product import *
-from purchase import open_product_file,save_to_file,check_for_product,filename2
+from purchase import purchase,open_product_file,save_to_file,check_for_product,filename2
 import random
 import json
 
@@ -15,19 +15,11 @@ def insert_product():
 	product_id =str(random.randint(1000, 9999))
     #getting user input
 	name=input("Enter name:")
-	#validation
-	while True:
-		try:
-			quantity=int(input("Enter quantity:"))
-			price=int(input("Enter price:"))
-		except ValueError:
-			print("Please input an integer!!!")
-			continue
-		else:
-			break
+	quantity=input("Enter quantity:")
+    #instantitating product object
 	product = Product(product_id,name,quantity,price)
     #storing product object in dictionary
-	new_product = {"id":product.product_id,"name":product.name,"quantity":str(product.quantity),"price":str(product.price)}
+	new_product = {"id":product.product_id,"name":product.name,"quantity":product.quantity,"price":product.price}
 	m.append(new_product)
 	#print(m)
 	new_products={"products":m}
@@ -79,16 +71,9 @@ def update_product():
 		elif choice == "2":
 			#looking for matching id
 			if key == product_data["id"]:
-				while True:
-					try:
-						price=int(input("Enter new price:"))
-					except ValueError:
-						print("Please enter int!!!")
-						continue
-					else:
-						break
+				price=input("Enter new price: ")
 				#updating the price
-				product_data["price"]=str(price)
+				product_data["price"]=price
 				print("***Updated Successfully!!!***")
 			new_data.append(product_data)
 			new_record={"products":new_data}
@@ -96,15 +81,8 @@ def update_product():
 
 		elif choice == "3":
 			if key == product_data["id"]:
-				while True:
-					try:
-						quantity=int(input("Enter new amount: "))
-					except ValueError:
-						print("Please enter int!!!")
-						continue
-					else:
-						break
-				product_data["quantity"]=str(quantity)
+				quantity=input("Enter new amount: ")
+				product_data["quantity"]=quantity
 				print("***Updated Successfully!!!***")
 			new_data.append(product_data)
 			#storing data in dictionary to later use in json file
@@ -147,7 +125,6 @@ def search_product():
 			print("Product quantity" "->"+products["quantity"])
 			print("Product price" "->"+products["price"])
 			print("------------------")
-	print("Search Completed!!!")
 
 
 
@@ -162,11 +139,12 @@ def product():
 	while(choice !="7"):
 
 		print("------------------------------\n")
-		print("  WELCOME TO POS PRODUCTS MENU \n  ")
+		print("WELCOME TO POS PRODUCTS MENU")
 		print("------------------------------\n")
+
 		print("****")
 		print("Total Number Of Products:")
-		show_all_products()
+		#show_all_products()
 		print("****\n")
 
 		print("1 - Enter Product")
@@ -174,9 +152,9 @@ def product():
 		print("3 - Update Products")
 		print("4 - Delete Products")
 		print("5 - Search Products")
-		print("6 - **Go To Customer Menu**")
-		print("7 - **Go To Purchase Menu** ")
-		print("8 - Exit\n")
+		print("6 - Go to Products Menu")
+		print("8 - Go To Purchase Menu")
+		print("7 - Exit \n")
 		choice= input(":")
 		#to insert data press1
 		if choice == "1" :
@@ -197,16 +175,11 @@ def product():
 		elif choice == "5":
 			search_product()
 
-		elif choice == "6":
-			from customer import customer
-			customer()
-
-		elif choice == "7":
-			from purchase import purchase_menu
-			purchase_menu()
+		elif choice == "8":
+			purchase()
 
 		#To exit program enter 7
-		elif choice == "8":
+		elif choice == "7":
 			break
 
 		else:
